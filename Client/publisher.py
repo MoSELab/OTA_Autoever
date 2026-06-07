@@ -43,5 +43,5 @@ def message_publish(topic, message, broker_ip, port = 1883):
 if __name__ == '__main__':
     TOPIC = '<topic>' #Message 전송 주제를 정의하는 변수
     BROKER_IP = "<broker ip>" #Message publish를 중개해주는 MQTT Broker의 주소
-    BROKER_PORT - "<broker port>" #연결하려는 MQTT Broker의 open port
-    message_publish(TOPIC, 'Hello! I am an update server.", BROKER_IP, BROKER_PORT)
+    BROKER_PORT = "<broker port>" #연결하려는 MQTT Broker의 open port
+    message_publish(TOPIC, "Hello! I am an update server.", BROKER_IP, BROKER_PORT)
