@@ -1,5 +1,4 @@
 import paho.mqtt.client as mqtt
-import os
 
 TOPIC = '<topic>' #Message 수신 주제를 정의하는 변수
 BROKER_IP = "<broker ip>" #Message publish를 중개해주는 MQTT Broker의 주소
