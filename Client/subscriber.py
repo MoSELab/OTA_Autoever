@@ -1,9 +1,9 @@
 import paho.mqtt.client as mqtt
 import os
-import base64
 
-topic = '<topic>'
-broker_ip = "<broker ip>"
+TOPIC = '<topic>' #Message 수신 주제를 정의하는 변수
+BROKER_IP = "<broker ip>" #Message publish를 중개해주는 MQTT Broker의 주소
+BROKER_PORT = "<broker port>" #MQTT Broker의 open port
 
 port = '<broker port number>'
 tmp_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'Downloads')
