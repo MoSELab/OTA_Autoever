@@ -1,6 +1,10 @@
 import paho.mqtt.client as mqtt
 import os
 
+TOPIC = '<topic>' #Message 수신 주제를 정의하는 변수
+BROKER_IP = "<broker ip>" #Message publish를 중개해주는 MQTT Broker의 주소
+BROKER_PORT = "<broker port>" #연결하려는 MQTT Broker의 open port
+
 #MQTT broker에 연결 시 연결 성공 여부 확인을 위한 콜백 함수 작성 (print 내 내용 수정을 통해 원하는 메시지가 커널에 출력되도록 할 수 있음)
 def on_connect(client, userdata, flags, reasonCode):
     if reasonCode == 0:
@@ -39,7 +43,4 @@ def topic_subscribe():
 
 #해당 코드를 직접 실행할 때만 하기 코드가 동작하도록 작성!
 if __name__ == "__main__":
-    TOPIC = '<topic>' #Message 수신 주제를 정의하는 변수
-    BROKER_IP = "<broker ip>" #Message publish를 중개해주는 MQTT Broker의 주소
-    BROKER_PORT = "<broker port>" #연결하려는 MQTT Broker의 open port
     topic_subscribe()
