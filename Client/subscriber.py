@@ -3,11 +3,7 @@ import os
 
 TOPIC = '<topic>' #Message 수신 주제를 정의하는 변수
 BROKER_IP = "<broker ip>" #Message publish를 중개해주는 MQTT Broker의 주소
-BROKER_PORT = "<broker port>" #MQTT Broker의 open port
-
-port = '<broker port number>'
-tmp_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'Downloads')
-os.makedirs(tmp_dir, exist_ok = True)
+BROKER_PORT - "<broker port>" #연결하려는 MQTT Broker의 open port
 
 def on_connect(client, userdata, flags, reasonCode):
     if reasonCode == 0:
