@@ -81,10 +81,14 @@ class CANInterface:
 if __name__ == "__main__":
     can_device = CANInterface()
     can_device.setup()
-    while True:
-        try:
+    try:
+        while True:
             print(can_device.receive())
-        except:
-            print("Error!")
-        finally:
-            can_device.close()
+            
+    except KeyboardInterrupt:
+        print("Stopped by user.")
+    except Exception as e:
+        print("Error:", e)
+        
+    finally:
+        can_device.close()
