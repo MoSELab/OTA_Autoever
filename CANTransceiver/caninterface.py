@@ -28,7 +28,12 @@ class CANInterface:
     def send(self, arb_id, data, extended=False):
         if self.bus is None:
             raise RuntimeError("CAN bus is not initialized. Call setup() first.")
-
+            
+        if len(data) > 8:
+            raise ValueError("Classic CAN data length must be 0~8 bytes.")
+        else:
+            data = bytes(data)
+        
         msg = can.Message(
             arbitration_id=arb_id,
             data=data,
