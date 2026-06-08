@@ -79,7 +79,7 @@ class CANInterface:
                 return frame
             
 if __name__ == "__main__":
-    can = CANInterface()
-    can.setup()
+    can_device = CANInterface()
+    can_device.setup()
     while True:
-        print(can.receive())
+        print(can_device.receive())
