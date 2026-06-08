@@ -80,5 +80,6 @@ class CANInterface:
             
 if __name__ == "__main__":
     can = CANInterface()
+    can.setup()
     while True:
         print(can.receive())
