@@ -82,4 +82,9 @@ if __name__ == "__main__":
     can_device = CANInterface()
     can_device.setup()
     while True:
-        print(can_device.receive())
+        try:
+            print(can_device.receive())
+        except:
+            print("Error!")
+        finally:
+            can_device.close()
