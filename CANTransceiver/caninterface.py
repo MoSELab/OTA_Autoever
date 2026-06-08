@@ -29,10 +29,13 @@ class CANInterface:
         if self.bus is None:
             raise RuntimeError("CAN bus is not initialized. Call setup() first.")
             
-        if len(data) > 8:
-            raise ValueError("Classic CAN data length must be 0~8 bytes.")
+        if isinstance(data, str):
+            data = data.encode("utf-8")
         else:
             data = bytes(data)
+
+        if len(data) > 8:
+            raise ValueError("Classic CAN data length must be 0~8 bytes.")
         
         msg = can.Message(
             arbitration_id=arb_id,
